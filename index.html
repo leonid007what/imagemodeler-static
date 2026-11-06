@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Modeler 2026 — 3D-модель и размеры по фотографиям</title>
+<meta name="description" content="Программа для Windows. Вы отмечаете одни и те же точки на 5–25 фотографиях, программа находит положения камер и считает размеры. Модель выгружается в FBX, OBJ и DXF.">
+<meta name="keywords" content="3D-модель по фотографиям, размеры по фото, обмер фасада по фотографиям, моделирование по фотографиям, моделирование без чертежей, как поставить камеру по фотографии, 3D-модель автомобиля по фото, фотограмметрия, ручная фотограмметрия, программа для фотограмметрии, замена ImageModeler, ортофото стены, экспорт FBX OBJ DXF, Windows">
+<meta property="og:title" content="Image Modeler 2026 — 3D-модель и размеры по фотографиям">
+<meta property="og:description" content="Программа для Windows. Вы отмечаете одни и те же точки на 5–25 фотографиях, программа находит положения камер и считает размеры. Модель выгружается в FBX, OBJ и DXF.">
+<meta property="og:type" content="website">
+<!-- Три штуки, и все нужны. .ico браузер просит сам по адресу /favicon.ico,
+     даже когда в разметке указан svg — без него во вкладке был глобус.
+     svg остаётся: он чёткий на любом увеличении. png — для закладок на
+     телефоне, там svg не берут. -->
+<link rel="icon" href="/imagemodeler-static/favicon.ico" sizes="any">
+<link rel="icon" href="/imagemodeler-static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/imagemodeler-static/icon.png">
+<link rel="canonical" href="https://leonid007what.github.io/imagemodeler-static/">
+<meta property="og:url" content="https://leonid007what.github.io/imagemodeler-static/">
+<meta property="og:image" content="https://leonid007what.github.io/imagemodeler-static/assets/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Окно Image Modeler 2026: камеры и точки, найденные по фотографиям">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Image Modeler 2026">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Modeler 2026",
+  "alternateName": "Имидж Моделер 2026",
+  "applicationCategory": "DesignApplication",
+  "applicationSubCategory": "Фотограмметрия",
+  "operatingSystem": "Windows 10, Windows 11",
+  "softwareVersion": "0.1.9",
+  "inLanguage": ["ru", "en"],
+  "url": "https://leonid007what.github.io/imagemodeler-static/",
+  "downloadUrl": "https://leonid007what.github.io/imagemodeler-static/pricing.html",
+  "image": "https://leonid007what.github.io/imagemodeler-static/assets/og-preview.jpg",
+  "screenshot": "https://leonid007what.github.io/imagemodeler-static/assets/shots/space.jpg",
+  "description": "Программа для Windows: вы отмечаете одни и те же точки на нескольких фотографиях, программа находит положения камер и строит модель с настоящими размерами. Экспорт в FBX, OBJ, STL, PLY и DXF, ортофото стены в масштабе.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Пробный ключ на 3 дня, один раз на аккаунт",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Месяц",
+      "price": "290",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Год",
+      "price": "2900",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Навсегда",
+      "price": "29000",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Для компании",
+      "price": "60000",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    }
+  ]
+}
+</script>
+
+<link rel="preload" as="image" href="/imagemodeler-static/assets/shots/space.jpg">
+<link rel="stylesheet" href="site.css?v=2026-10-09">
+</head>
+
+<body>
+
+<!-- ЛОГОТИП: диафрагма из шести лепестков. Одна форма + пять поворотов. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="blade" d="M 100 0 A 100 100 0 0 1 184.8 47.01 Q 114.28 74.24 100 0 Z"/>
+    <g id="aperture">
+      <use href="#blade" fill="#2A3550"/>
+      <use href="#blade" fill="#F26B1D" transform="rotate(60 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(120 100 100)"/>
+      <use href="#blade" fill="#2A3550" transform="rotate(180 100 100)"/>
+      <use href="#blade" fill="#20A0A8" transform="rotate(240 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(300 100 100)"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="topbar topbar--enter">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top">
+      <svg class="brand__mark" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+      <span class="brand__name">Image&nbsp;Modeler</span>
+    </a>
+    <nav class="topnav">
+      <a href="#film">Ролик</a>
+      <a href="#plain">Как это работает</a>
+      <a href="/imagemodeler-static/start.html">За 5 минут</a>
+      <a href="/imagemodeler-static/pricing.html">Цены</a>
+      <a href="/imagemodeler-static/support.html">Поддержка</a>
+      <a href="/imagemodeler-static/reviews.html">Отзывы</a>
+    </nav>
+    <a class="topbar__me" href="/imagemodeler-static/account.html">Скачать</a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Переключить тему">Тема</button>
+  </div>
+</header>
+
+<div class="wrap" style="margin-top:1rem">
+  <p class="data" style="padding:.7rem 1rem;border:1px solid var(--line, #3a4256);border-radius:10px">
+    Сайт временно работает в упрощённом режиме: кабинет и оплата на сайте не работают.
+    Программу можно <a href="/imagemodeler-static/account.html">скачать</a>, ключ выдаём по письму на
+    <a href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a> или боту в Телеграме: <a href="https://t.me/SupIM2026_Bot">@SupIM2026_Bot</a>.
+  </p>
+</div>
+
+
+<main id="top">
+
+  <!-- ================= ГЕРОЙ ================= -->
+  <section class="hero">
+    <div class="hero__shot" aria-hidden="true">
+      <video class="hero__film" autoplay muted loop playsinline preload="metadata"
+             poster="/assets/shots/space.jpg">
+        <source src="/imagemodeler-static/assets/hero-loop.mp4?v=3" type="video/mp4">
+      </video>
+    </div>
+    <div class="wrap hero__inner">
+      <div>
+        <p class="eyebrow">Программа для Windows</p>
+        <h1>Image&nbsp;Modeler <span class="yr">2026</span>
+          <span class="hero__what">3D-модель и размеры по&nbsp;фотографиям</span></h1>
+        <p class="hero__lede">
+          Сфотографируйте предмет с нескольких сторон и отметьте на снимках одни
+          и те же углы. Программа построит по ним <b>объёмную модель</b> и посчитает
+          <b>настоящие размеры</b>.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/imagemodeler-static/pricing.html">Попробовать 3 дня бесплатно</a>
+          <a class="playlink" href="#film"><span aria-hidden="true">▸</span> Смотреть ролик, полторы минуты</a>
+        </div>
+        <p class="hero__meta">
+          <span>Windows 10 и 11 · установщик 134&nbsp;МБ</span>
+          <span>Русский и английский</span>
+          <span>Видеокарта не нужна</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ЧИСЛА ================= -->
+  <section class="band" aria-label="Проект, на котором снят ролик">
+    <div class="wrap band__grid">
+      <div class="band__cell">
+        <span class="band__num"><span data-count="25">25</span></span>
+        <span class="band__label">фотографий в проекте</span>
+      </div>
+      <div class="band__cell">
+        <span class="band__num"><span data-count="50">50</span></span>
+        <span class="band__label">точек отмечено руками</span>
+      </div>
+      <div class="band__cell">
+        <span class="band__num"><span data-count="1.589">1.589</span> <i>px</i></span>
+        <span class="band__label">средний промах программы, в пикселях снимка</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= РОЛИК ================= -->
+  <section class="section" id="film">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Полторы минуты</p>
+        <h2>Посмотрите, как это выглядит</h2>
+        <p class="section__intro">
+          Ролик снят в самой программе, на настоящем проекте: двадцать пять
+          фотографий машины, пятьдесят отмеченных точек, найденные положения камер.
+        </p>
+      </div>
+      <div class="filmbox" id="filmbox">
+        <video id="filmvideo" controls preload="none" poster="/assets/shots/marking.jpg" playsinline
+               width="1600" height="900">
+          <source src="/imagemodeler-static/assets/promo.mp4?v=3" type="video/mp4">
+        </video>
+        <button class="filmbox__play" id="filmplay" type="button" aria-label="Включить ролик">
+          <span class="filmbox__disc" aria-hidden="true">▶</span>
+          <span class="filmbox__word">Смотреть ролик <i>Полторы минуты, со звуком</i></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ПОПРОБОВАТЬ ================= -->
+  <section class="section" id="try">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Без установки</p>
+        <h2>Поставьте точку прямо здесь</h2>
+        <p class="section__intro">
+          Два снимка одного сарая. Отметьте на них один и тот же угол — и
+          увидите, как из двух плоских кликов получаются три координаты.
+        </p>
+      </div>
+      <div class="demo" id="demo">
+        <div class="demo__head">
+          <span class="demo__title">Попробуйте прямо здесь</span>
+          <button class="demo__reset" id="demoReset" type="button">Сбросить</button>
+        </div>
+
+        <div class="views">
+          <div class="view">
+            <span class="view__label">Снимок 1</span>
+            <canvas id="cvA" width="480" height="340" tabindex="0"
+                    aria-label="Первый снимок сарая. Отметьте угол."></canvas>
+          </div>
+          <div class="view">
+            <span class="view__label">Снимок 2</span>
+            <canvas id="cvB" width="480" height="340" tabindex="0"
+                    aria-label="Второй снимок сарая. Отметьте тот же угол на линии-подсказке."></canvas>
+          </div>
+        </div>
+
+        <div class="readout">
+          <div class="readout__row">
+            <span class="readout__k">Точка</span>
+            <span class="readout__v" id="roName">—</span>
+          </div>
+          <div class="readout__row">
+            <span class="readout__k">Место на снимке 1</span>
+            <span class="readout__v is-mark" id="roA">—</span>
+          </div>
+          <div class="readout__row">
+            <span class="readout__k">Место на снимке 2</span>
+            <span class="readout__v is-mark" id="roB">—</span>
+          </div>
+          <div class="readout__row">
+            <span class="readout__k">Координаты X Y Z, м</span>
+            <span class="readout__v is-solved" id="roXYZ">—</span>
+          </div>
+        </div>
+
+        <p class="demo__hint" id="demoHint">
+          Наведите курсор на левый снимок — под ним появится <b>лупа</b>.
+          Кликните по любому углу сарая.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= СНИМКИ ================= -->
+  <section class="section" id="shots">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Настоящие экраны</p>
+        <h2>Ничего не нарисовано для красоты</h2>
+        <p class="section__intro">
+          Это снимки окна программы на том же проекте. Числа на них — те,
+          которые она посчитала.
+        </p>
+      </div>
+      <div class="swipe" aria-label="Снимок до и после разметки">
+        <img class="swipe__base" src="/imagemodeler-static/assets/shots/swipe-before.jpg" width="1400" height="787"
+             alt="Фотография автомобиля в окне Image Modeler 2026 до разметки" loading="lazy">
+        <img class="swipe__top" src="/imagemodeler-static/assets/shots/swipe-after.jpg" width="1400" height="787"
+             alt="Та же фотография в Image Modeler 2026 с отмеченными точками" loading="lazy">
+        <span class="swipe__handle" aria-hidden="true"></span>
+        <span class="swipe__tag swipe__tag--l">снимок</span>
+        <span class="swipe__tag swipe__tag--r">23 отметки</span>
+        <input class="swipe__range" type="range" min="0" max="100" value="52"
+               aria-label="Сдвинуть границу сравнения">
+      </div>
+      <p class="swipe__note">Потяните границу. Справа — настоящие отметки из проекта, те самые, по которым программа нашла, откуда снят каждый кадр.</p>
+
+      <div class="shots">
+        <figure class="shot shot--wide">
+          <img src="/imagemodeler-static/assets/shots/marking.jpg" width="1600" height="900"
+               alt="Окно Image Modeler 2026: точки на фотографии и список точек с промахом по каждой" loading="lazy">
+          <figcaption>Точки на снимке. Справа список: каждая точка, на скольких кадрах она отмечена и насколько программа с ней промахнулась.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/imagemodeler-static/assets/shots/both.jpg" width="1600" height="900"
+               alt="Окно Image Modeler 2026: фотография и найденные по ней камеры рядом" loading="lazy">
+          <figcaption>Фотография и пространство рядом.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/imagemodeler-static/assets/shots/space.jpg" width="1600" height="900"
+               alt="Окно Image Modeler 2026: положения камер и точки в пространстве, найденные по фотографиям" loading="lazy">
+          <figcaption>Найденные камеры: видно, откуда снят каждый кадр.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="/imagemodeler-static/assets/shots/residuals.jpg" width="1600" height="900"
+               alt="Окно Image Modeler 2026: карта остаточных ошибок по кадру" loading="lazy">
+          <figcaption>Где ошибки: промахи, разложенные по кадру.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ПРОСТЫМИ СЛОВАМИ =================
+       Стоит раньше «Идеи» нарочно. Всё, что ниже, написано для человека,
+       который уже знает слово «фотограмметрия»; сюда попадает тот, кто не
+       знает, и у него один вопрос — что это вообще и зачем ему. Ни одного
+       термина здесь быть не должно. -->
+  <section class="section" id="plain">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Простыми словами</p>
+        <h2>Фотографии на входе — объёмная модель с размерами на выходе</h2>
+        <div class="section__intro prose">
+          <p>
+            Обычная фотография плоская: на ней не видно, насколько предмет
+            глубокий и сколько в нём сантиметров. Но если снять один и тот же предмет
+            с нескольких сторон, эти сведения в снимках уже есть — просто их надо
+            достать.
+          </p>
+          <p>
+            Программа этим и занимается. Вы показываете ей, что один и тот же угол
+            на разных снимках — это один и тот же угол. Показали десяток таких
+            точек — и программа вычисляет, откуда сделан каждый кадр, а заодно
+            где эти точки находятся в пространстве. Дальше по ним строится модель.
+          </p>
+          <p>
+            Скажете, что расстояние между двумя точками — метр, и вся модель
+            получит настоящие размеры. Не «примерно такой формы», а с числами,
+            которые можно перенести в чертёж.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Чем это отличается от того, что делают автоматические программы</h3>
+        <p>
+          Другие программы ищут совпадения сами. Им нужны сотни снимков, они
+          спотыкаются о стекло, блестящий металл и гладкие однотонные стены,
+          а на выходе дают комок из миллионов точек, который потом долго чистят.
+        </p>
+        <p>
+          Здесь точки показываете вы. Снимков хватает десятка, блики и стекло
+          не мешают — программа не гадает, где угол, ей это сказали. И вы видите,
+          насколько точно всё сошлось: не «в целом хорошо», а по каждой
+          поставленной точке отдельно.
+        </p>
+
+        <h3>Кому это нужно</h3>
+        <ul>
+          <li><b>Снять размеры того, до чего не дотянуться рулеткой</b> — фасад
+              здания, крыша, станок в цеху.</li>
+          <li><b>Восстановить предмет, которого больше нет</b> — по старым
+              фотографиям: разбитая машина, снесённая постройка, деталь
+              с архивного снимка.</li>
+          <li><b>Сделать модель для трёхмерной печати или для игры</b>, когда
+              нужна чистая форма, а не комок точек.</li>
+          <li><b>Показать в суде или заказчику</b>, откуда взялось число:
+              программа считает и показывает, насколько ей можно верить.</li>
+        </ul>
+        <p>
+          <b>Тем, кто работал в ImageModeler.</b> Так называлась программа
+          компании REALVIZ, позже её выпускала Autodesk. Последняя версия вышла
+          в 2009 году, сейчас её не продают. Image&nbsp;Modeler 2026 написан
+          заново другим автором и с Autodesk не связан. Общее у них одно:
+          точки на снимках отмечает человек, камеры по этим точкам находит
+          программа.
+        </p>
+
+        <h3>Что нужно от вас</h3>
+        <p>
+          Обычный фотоаппарат или телефон и несколько снимков предмета с разных
+          сторон — так, чтобы каждый угол, который вам важен, попал хотя бы
+          на два кадра. Windows. Особая видеокарта не нужна: всё считает
+          процессор.
+        </p>
+        <p>
+          Одна рулетка тоже пригодится — чтобы измерить хоть что-нибудь одно
+          и сказать программе это число. Без него модель получится правильной
+          формы, но неизвестного размера.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ИДЕЯ ================= -->
+  <section class="section" id="idea">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Идея</p>
+        <h2>Что считать углом — решает человек</h2>
+        <div class="section__intro prose">
+          <p>
+            Автоматические программы ищут одинаковые места на снимках сами и выдают
+            миллионы точек, из которых потом вычищают мусор. Image&nbsp;Modeler устроен
+            наоборот: одинаковые места показываете вы.
+          </p>
+          <p style="margin-top:1rem">
+            Вы отмечаете двадцать углов, которые действительно важны, и получаете чистую
+            форму, где каждая вершина стоит там, где вы её поставили. Про каждую
+            точку программа говорит, насколько точно она сошлась.
+          </p>
+        </div>
+      </div>
+
+      <div class="compare">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Автоматические программы</th>
+              <th scope="col">Image Modeler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Кто находит одинаковые места на снимках</th>
+              <td>Программа, сама</td>
+              <td class="own">Человек</td>
+            </tr>
+            <tr>
+              <th scope="row">Сколько снимков нужно</th>
+              <td>Сотни, снятых внахлёст</td>
+              <td class="own">Обычно 6–20</td>
+            </tr>
+            <tr>
+              <th scope="row">Что на выходе</th>
+              <td>Густая сетка, которую чистят и перестраивают</td>
+              <td class="own">Модель, которую вы строите по найденным точкам</td>
+            </tr>
+            <tr>
+              <th scope="row">Съёмка</th>
+              <td>Облёт предмета по правилам, кадр за кадром</td>
+              <td class="own">Несколько снимков с разных сторон</td>
+            </tr>
+            <tr>
+              <th scope="row">Отражения, стекло, гладкие стены</th>
+              <td>Сбивают программу</td>
+              <td class="own">Не мешают: угол показывает человек</td>
+            </tr>
+            <tr>
+              <th scope="row">Что можно проверить</th>
+              <td>Общий отчёт по всей модели</td>
+              <td class="own">Каждую точку отдельно</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ПО ШАГАМ ================= -->
+  <section class="section" id="pipeline">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">По шагам</p>
+        <h2>От папки со снимками до модели с размерами</h2>
+        <p class="section__intro prose">
+          Шесть шагов. Каждый следующий опирается на предыдущий, и вернуться назад
+          можно в любой момент.
+        </p>
+      </div>
+
+      <div class="stages">
+
+        <article class="stage reveal">
+          <div class="stage__no">01</div>
+          <div class="stage__body">
+            <h3>Фотографии</h3>
+            <p>
+              Откройте папку со снимками. Фотоаппарат и телефон записывают в каждый файл сведения о съёмке, и программа берёт оттуда, каким объективом снят кадр. Снимки лежат лентой под окном. Если папку перенесли в другое место, программа найдёт снимки заново.
+            </p>
+            <ul class="stage__facts">
+              <li>Сведения о съёмке читаются из файла</li>
+              <li>Лента снимков</li>
+              <li>Перенесённая папка находится заново</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stage reveal">
+          <div class="stage__no">02</div>
+          <div class="stage__body">
+            <h3>Точки на снимках</h3>
+            <p>
+              Здесь уходит основное время, поэтому сюда вложено больше всего. Под курсором лупа: без увеличения точка ставится наугад. После щелчка отметка сама садится на ближайший угол, и ошибка обычно становится вдвое меньше. Стрелки двигают отметку на пиксель, с Shift — на десятую долю. Рядом с курсором показан кусочек снимка, где эта точка отмечена впервые: видно, тот ли это болт, и переключать снимки не нужно.
+            </p>
+            <ul class="stage__facts">
+              <li>Лупа под курсором</li>
+              <li>Отметка сама садится на угол</li>
+              <li>Точная подвижка стрелками</li>
+              <li>Подсказка: как точка выглядела в первый раз</li>
+              <li>Сам переходит к следующему снимку</li>
+              <li>Пунктиром — что ещё не отмечено</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stage reveal">
+          <div class="stage__no">03</div>
+          <div class="stage__body">
+            <h3>Расчёт</h3>
+            <p>
+              Кнопка «Калибровать». Программа одним расчётом находит, откуда и куда смотрела каждая камера, каким был объектив и где в пространстве стоит каждая точка. Расчёт идёт в фоне: видно, сколько осталось, и его можно отменить. Добавили десять снимков к готовому проекту — «Уточнить» досчитает только их. Одна клавиша ведёт к самой неточной отметке, потом к следующей: так находят случайные промахи руки.
+            </p>
+            <ul class="stage__facts">
+              <li>Камеры, объектив и точки — одним расчётом</li>
+              <li>Один неверный щелчок не портит остальное</li>
+              <li>Расчёт в фоне, с отменой</li>
+              <li>Новые снимки досчитываются отдельно</li>
+              <li>Переход к самой неточной отметке</li>
+              <li>Случайные промахи убираются одним щелчком</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stage reveal">
+          <div class="stage__no">04</div>
+          <div class="stage__body">
+            <h3>Размер и направление</h3>
+            <p>
+              По одним фотографиям форма известна, а размер нет, и непонятно, где верх. Назовите одно расстояние, которое вы измерили рулеткой, и покажите, где верх и откуда вести отсчёт. Модель получит ваши единицы, и размеры на ней будут значить то же, что рулетка на самом предмете.
+            </p>
+            <ul class="stage__facts">
+              <li>Одно известное расстояние</li>
+              <li>Где верх</li>
+              <li>Откуда вести отсчёт</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stage reveal">
+          <div class="stage__no">05</div>
+          <div class="stage__body">
+            <h3>Модель и текстура</h3>
+            <p>
+              Модель строится по найденным точкам: вершины встают туда, где вы отметили углы. Раскраска (текстура) собирается из самих фотографий в одну картинку, её размер и подробность задаёте вы. Объёмный вид можно вынести в отдельное окно на второй монитор.
+            </p>
+            <ul class="stage__facts">
+              <li>Модель по вашим точкам</li>
+              <li>Текстура из исходных снимков</li>
+              <li>Размер и подробность текстуры</li>
+              <li>Объёмный вид в отдельном окне</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="stage reveal">
+          <div class="stage__no">06</div>
+          <div class="stage__body">
+            <h3>Размеры и сохранение</h3>
+            <p>
+              Расстояние, угол и площадь между отмеченными точками, в ваших единицах. Ради этих чисел предмет чаще всего и снимают. Модель сохраняется в FBX, OBJ, STL и PLY: их открывают Blender, 3ds Max и программы для 3D-печати. Точки и размеры уходят в DXF для AutoCAD и nanoCAD. Ещё программа делает ровный снимок стены в масштабе (ортофото) и кладёт рядом чертёж её контуров в DXF.
+            </p>
+            <ul class="stage__facts">
+              <li>Расстояние · угол · площадь</li>
+              <li>Autodesk FBX</li>
+              <li>Wavefront OBJ</li>
+              <li>STL</li>
+              <li>PLY</li>
+              <li>DXF</li>
+              <li>Ортофото стены в масштабе</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ВОЗМОЖНОСТИ ================= -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Уже работает</p>
+        <h2>Мелочи, из которых состоит точность</h2>
+        <p class="section__intro prose">
+          Ниже — то, что уже работает в нынешней версии. Не планы.
+        </p>
+      </div>
+
+      <div class="grid-feat">
+        <div class="feat reveal">
+          <span class="feat__k">Точки</span>
+          <h3>Лупа под курсором</h3>
+          <p>Увеличение прямо там, где ставится точка. Сильнее всего остального прибавляет точности.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Точки</span>
+          <h3>Отметка садится на угол</h3>
+          <p>После щелчка отметка сама уточняется до ближайшего угла рядом. Какой угол вам нужен, она не выбирает — только подправляет уже выбранный.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Точки</span>
+          <h3>Как точка выглядела в первый раз</h3>
+          <p>Рядом с курсором — кусочек снимка, где эта точка отмечена впервые. Видно, то ли это место, и переключать снимки не нужно.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Точки</span>
+          <h3>Подвижка стрелками</h3>
+          <p>Стрелка двигает отметку на пиксель, Shift со стрелкой — на десятую долю. Мышью так точно не попасть.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Снимки</span>
+          <h3>Пунктир на неотмеченном</h3>
+          <p>Точки, которые видны в этом кадре и ещё не отмечены, показаны пунктиром. Видно, сколько работы осталось на каждом снимке.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Снимки</span>
+          <h3>Сведения о съёмке из файла</h3>
+          <p>Каким объективом снят кадр, программа читает из самого файла, а не угадывает.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Расчёт</span>
+          <h3>Расчёт в фоне</h3>
+          <p>Видно, сколько осталось, и есть кнопка отмены. Окно не замирает, даже когда в проекте четыреста снимков.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Расчёт</span>
+          <h3>Досчёт новых снимков</h3>
+          <p>Добавленные снимки досчитываются отдельно, весь проект заново не пересчитывается.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Расчёт</span>
+          <h3>Переход к самой неточной отметке</h3>
+          <p>Одна клавиша ведёт к отметке, которая сошлась хуже всех, затем к следующей. Случайные промахи убираются одним щелчком.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Размеры</span>
+          <h3>Расстояние, угол, площадь</h3>
+          <p>Между отмеченными точками, в ваших единицах. Ради этих чисел предмет чаще всего и снимают.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Сохранение</span>
+          <h3>Форматы и ортофото</h3>
+          <p>FBX, OBJ, STL и PLY для модели, DXF для чертежа. Ровный снимок стены в масштабе (ортофото) сохраняется картинкой, рядом с ним чертёж контуров в DXF.</p>
+        </div>
+        <div class="feat reveal">
+          <span class="feat__k">Окно</span>
+          <h3>Объёмный вид в отдельном окне</h3>
+          <p>Снимок на одном мониторе, модель на другом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= УСТРОЙСТВО =================
+       Единственное место на странице, где названо слово «фотограмметрия»:
+       покупателю оно не нужно, а тот, кто ищет программу этим словом,
+       должен её найти. -->
+  <section class="section" id="tech">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Для любопытных</p>
+        <h2>Что внутри</h2>
+        <p class="section__intro prose">
+          Способ, которым программа находит камеры и точки по снимкам, называется
+          фотограмметрией. Здесь она ручная: общие точки показывает человек.
+        </p>
+      </div>
+
+      <div class="specs">
+        <table class="spec">
+          <tbody>
+            <tr>
+              <th scope="row">Расчёты</th>
+              <td><b>C++</b>. Считает процессор, поэтому хватает обычного ноутбука</td>
+            </tr>
+            <tr>
+              <th scope="row">Окно программы</th>
+              <td><b>Python и Qt</b></td>
+            </tr>
+            <tr>
+              <th scope="row">Языки</th>
+              <td>Русский и английский</td>
+            </tr>
+            <tr>
+              <th scope="row">Видеокарта</th>
+              <td>Не требуется. Программа работает на любом компьютере с Windows 10 или 11</td>
+            </tr>
+            <tr>
+              <th scope="row">Версия</th>
+              <td><b>0.1.9</b> — в разработке</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= СКАЧАТЬ ================= -->
+  <section class="section" id="get">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <p class="eyebrow">Как получить</p>
+          <h2 style="margin-top:1rem">Пробный ключ на 3 дня — 0&nbsp;₽</h2>
+          <p>
+            Установщик для Windows. Python, библиотеки и счётный модуль уже внутри —
+            ставить отдельно ничего не нужно. Видеокарта не требуется.
+          </p>
+          <p style="margin-top:1rem">
+            После регистрации в кабинете сразу появятся пробный ключ на 3 дня
+            и <b>личная ссылка на установщик</b>. Карта для этого не нужна. Пробный ключ
+            выдаётся один раз на аккаунт и не продлевается; дальше нужен тариф,
+            от 290&nbsp;₽ в месяц. Ссылка на установщик живёт ограниченное время,
+            но обновляется одной кнопкой в кабинете.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/imagemodeler-static/pricing.html">Смотреть цены</a>
+            <a class="btn btn--ghost" href="/imagemodeler-static/account.html">У меня уже есть ключ</a>
+          </div>
+          <p class="hero__meta">
+            <span>Windows 10 / 11 · 64 бита</span>
+            <span>Установщик 134&nbsp;МБ</span>
+            <span>Русский и английский</span>
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.1rem">
+          <p class="note">
+            <b>Версия 0.1.9, в разработке.</b> Основной путь — снимки, точки, расчёт, размер, модель, текстура, измерения, сохранение — работает целиком.
+            Часть возможностей из списка планов ещё впереди.
+          </p>
+          <p class="note" style="border-left-color:var(--solved)">
+            <b>С чего начать.</b> Снимите объект с шести-восьми точек так, чтобы каждый
+            угол попал минимум на два кадра. Отметьте один и тот же угол на двух снимках
+            — этого уже достаточно, чтобы программа начала считать. А можно сначала
+            <a href="/imagemodeler-static/start.html">разобрать готовый пример за пять минут</a>.
+          </p>
+          <p class="note" style="border-left-color:var(--line)">
+            <b>Про SmartScreen.</b> Сборка ещё не подписана сертификатом, поэтому Windows
+            при первом запуске покажет синее окно. «Подробнее» → «Выполнить в любом случае».
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="cta">
+  <div class="wrap cta__inner">
+    <div>
+      <p class="eyebrow">Попробовать</p>
+      <h2 class="cta__title">Скачайте и поставьте свою первую точку</h2>
+      <p class="cta__lede">Три дня бесплатно: пробный ключ приходит сразу после регистрации, ограничений в работе нет.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--primary btn--wide" href="/imagemodeler-static/pricing.html">Попробовать 3 дня бесплатно</a>
+      <a class="btn btn--ghost btn--wide" href="/imagemodeler-static/start.html">Сначала посмотреть, как это делается</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <svg width="18" height="18" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+    <span>Image Modeler 2026</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="/imagemodeler-static/start.html">За 5 минут</a>
+    <a class="data" href="/imagemodeler-static/reviews.html">Отзывы</a>
+    <a class="data" href="/imagemodeler-static/changelog.html">Что нового</a>
+    <a class="data" href="https://t.me/imagemodeler2026">Телеграм</a>
+    <a class="data" href="/imagemodeler-static/terms.html">Оплата и возврат</a>
+    <a class="data" href="/imagemodeler-static/offer.html">Оферта</a>
+    <a class="data" href="/imagemodeler-static/eula.html">Лицензия</a>
+    <a class="data" href="/imagemodeler-static/privacy.html">Данные</a>
+    <span class="data foot__ver">v0.1.9</span>
+  </div>
+  <div class="wrap foot__row">
+    <span class="data">Потехин Леонид Иванович, самозанятый · ИНН 752406177148</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a>
+  </div>
+</footer>
+
+<script src="index.js" defer></script>
+<script src="motion.js" defer></script>
+
+<script>
+  /* Кнопка поверх заставки. Без неё раздел выглядел чёрным прямоугольником:
+     заставка у ролика -- тёмный снимок программы, и понять, что это видео,
+     можно было только по тонкой полосе управления внизу. */
+  (function () {
+    var film = document.getElementById("filmvideo");
+    var play = document.getElementById("filmplay");
+    if (!film || !play) return;
+    play.addEventListener("click", function () { film.play(); });
+    film.addEventListener("play", function () { play.hidden = true; });
+    film.addEventListener("pause", function () { if (film.currentTime === 0) play.hidden = false; });
+  })();
+</script>
+
+</body>
+</html>

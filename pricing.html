@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цены и пробный ключ на 3 дня — Image Modeler 2026</title>
+<meta name="description" content="Image Modeler 2026 можно попробовать 3 дня бесплатно: пробный ключ выдаётся при регистрации, один раз на аккаунт. Тарифы: месяц 290 ₽, год 2 900 ₽, навсегда 29 000 ₽, для компании 60 000 ₽.">
+<meta name="keywords" content="Image Modeler цена, купить Image Modeler, лицензия Image Modeler, программа 3D-модель по фото цена, пробная версия программы фотограмметрии">
+<meta property="og:title" content="Цены и пробный ключ на 3 дня — Image Modeler 2026">
+<meta property="og:description" content="Пробный ключ на 3 дня — бесплатно, один раз на аккаунт, карта не нужна. Дальше тариф от 290 ₽ в месяц.">
+<meta property="og:type" content="website">
+<!-- Три штуки, и все нужны. .ico браузер просит сам по адресу /favicon.ico,
+     даже когда в разметке указан svg — без него во вкладке был глобус.
+     svg остаётся: он чёткий на любом увеличении. png — для закладок на
+     телефоне, там svg не берут. -->
+<link rel="icon" href="/imagemodeler-static/favicon.ico" sizes="any">
+<link rel="icon" href="/imagemodeler-static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/imagemodeler-static/icon.png">
+<link rel="canonical" href="https://leonid007what.github.io/imagemodeler-static/pricing.html">
+<meta property="og:url" content="https://leonid007what.github.io/imagemodeler-static/pricing.html">
+<meta property="og:image" content="https://leonid007what.github.io/imagemodeler-static/assets/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Окно Image Modeler 2026: камеры и точки, найденные по фотографиям">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Image Modeler 2026">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Modeler 2026",
+  "alternateName": "Имидж Моделер 2026",
+  "applicationCategory": "DesignApplication",
+  "applicationSubCategory": "Фотограмметрия",
+  "operatingSystem": "Windows 10, Windows 11",
+  "softwareVersion": "0.1.9",
+  "inLanguage": ["ru", "en"],
+  "url": "https://leonid007what.github.io/imagemodeler-static/",
+  "downloadUrl": "https://leonid007what.github.io/imagemodeler-static/pricing.html",
+  "image": "https://leonid007what.github.io/imagemodeler-static/assets/og-preview.jpg",
+  "screenshot": "https://leonid007what.github.io/imagemodeler-static/assets/shots/space.jpg",
+  "description": "Программа для Windows: вы отмечаете одни и те же точки на нескольких фотографиях, программа находит положения камер и строит модель с настоящими размерами. Экспорт в FBX, OBJ, STL, PLY и DXF, ортофото стены в масштабе.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Пробный ключ на 3 дня, один раз на аккаунт",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Месяц",
+      "price": "290",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Год",
+      "price": "2900",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Навсегда",
+      "price": "29000",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Для компании",
+      "price": "60000",
+      "priceCurrency": "RUB",
+      "url": "https://leonid007what.github.io/imagemodeler-static/pricing.html"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="site.css?v=2026-10-09">
+<style>
+  /* Только страница цен: строки «откуда эта сумма» под ценой и окно оплаты. */
+  .promo { display: flex; gap: .7rem; flex-wrap: wrap; align-items: flex-end;
+           max-width: 30rem; margin: 0 0 1.2rem; }
+  .promo .field { flex: 1 1 12rem; }
+  .promo .btn { flex: none; }
+  /* Поле промокода: знаки одной ширины, группы по четыре читаются легче. */
+  .field input.codein { font-family: var(--font-data); letter-spacing: .06em; }
+  .plan__deal { display: grid; gap: .2rem; font-size: .85rem; color: var(--solved); margin-top: .5rem; }
+  .plan__deal.is-bad { color: var(--ink-2); }
+  .plan__price { flex-wrap: wrap; }
+  .plan__price .price__was { font-size: 1rem; flex-basis: 100%; margin: .25rem 0 0;
+                             white-space: nowrap; }
+  .plan__deal[hidden], .price__was[hidden] { display: none; }
+
+  /* ---- окно оплаты ----
+     Одно окно на все тарифы: что покупается, из чего сложилась сумма,
+     промокод, согласие, способы оплаты и одна кнопка. Та же подача, что
+     у окна итога (paid.html): человек должен видеть один путь, а не
+     три разные страницы. */
+  html.pay-lock, html.pay-lock body { overflow: hidden; }
+  .pay {
+    position: fixed; inset: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
+    background: color-mix(in srgb, var(--ground) 76%, transparent);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
+  .pay[hidden], .pay [hidden] { display: none !important; }
+  .pay__box {
+    position: relative; width: min(100%, 35rem);
+    max-height: calc(100vh - 2rem); max-height: calc(100dvh - 2rem);
+    overflow-y: auto; overscroll-behavior: contain;
+    background: var(--surface); color: var(--ink);
+    border: 1px solid var(--line); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 1.7rem 1.7rem 1.4rem;
+    /* Только сдвиг, без прозрачности: внутри знак СБП, а брендбук
+       запрещает показывать его полупрозрачным. */
+    animation: pay-in .24s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .pay :focus-visible { outline: 2px solid var(--mark); outline-offset: 2px; }
+  /* Само окно получает фокус при открытии, чтобы читалка начала с заголовка;
+     рамка вокруг всего окна при этом не нужна. */
+  .pay .pay__box:focus, .pay .pay__box:focus-visible { outline: none; }
+  @keyframes pay-in { from { transform: translateY(16px); } to { transform: none; } }
+
+  .pay__x {
+    position: absolute; top: .65rem; right: .65rem;
+    width: 44px; height: 44px; display: grid; place-items: center;
+    border: 1px solid transparent; border-radius: 999px; background: transparent;
+    color: var(--ink-2); font: inherit; font-size: 1.7rem; line-height: 1; cursor: pointer;
+    transition: border-color .2s, color .2s;
+  }
+  .pay__x:hover { color: var(--ink); border-color: var(--line); }
+  .pay__x[disabled] { opacity: .4; cursor: default; }
+  .pay .eyebrow { margin: 0 3rem .6rem 0; }
+  .pay__title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(1.7rem, 5vw, 2.15rem); line-height: 1.1; margin: 0 3rem .25rem 0;
+  }
+  .pay__term { margin: 0; color: var(--ink-2); }
+  .pay__test {
+    display: inline-block; margin-top: .7rem; padding: .15rem .7rem;
+    border: 1px dashed var(--gold); border-radius: 999px;
+    color: var(--gold); font-size: .78rem; letter-spacing: .02em;
+  }
+
+  /* Счёт: строки появляются, только когда к цене что-то применилось. */
+  .bill { margin: 1.3rem 0 0; }
+  .bill__row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: .3rem 1rem;
+    padding: .55rem 0; border-top: 1px solid var(--line-soft);
+  }
+  .bill__row dt { color: var(--ink-2); font-size: .95rem; min-width: 0; }
+  .bill__row dt small { display: block; color: var(--muted); font-size: .82rem; margin-top: .1rem; }
+  .bill__row dd {
+    margin: 0; white-space: nowrap; color: var(--ink);
+    font-weight: 600; font-variant-numeric: tabular-nums;
+  }
+  .bill__row.is-minus dd, .bill__row.is-plus dd { color: var(--solved); }
+  .bill__total {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    margin-top: .1rem; padding: .9rem 0 .1rem; border-top: 1px solid var(--line);
+  }
+  .bill__total-k { color: var(--ink-2); }
+  .bill__sum {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 7vw, 2.8rem); line-height: 1;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .bill__sum small { font-family: var(--font-body); font-size: .45em; color: var(--ink-2); }
+
+  .pay__promo { margin-top: 1rem; border-top: 1px solid var(--line-soft); }
+  .pay__promo summary {
+    display: flex; align-items: center; gap: .5rem; min-height: 44px;
+    cursor: pointer; list-style: none; color: var(--ink-2); font-size: .95rem;
+  }
+  .pay__promo summary::-webkit-details-marker { display: none; }
+  .pay__promo summary::after { content: "+"; margin-left: auto; color: var(--gold); font-size: 1.3rem; line-height: 1; }
+  .pay__promo[open] summary::after { content: "−"; }
+  .pay__promo summary:hover { color: var(--ink); }
+  .pay__promo .promo { max-width: none; margin: .3rem 0 .8rem; }
+  .pay__promo .promo .field { flex-basis: 9rem; }
+  .pay__promo .msg { margin: 0 0 .8rem; }
+
+  .pay__agree {
+    margin: 1rem 0 0; padding: .6rem .8rem; min-height: 44px; align-items: center;
+    border: 1px solid var(--line); border-radius: var(--radius);
+    transition: border-color .2s;
+  }
+  .pay__agree input { width: 20px; height: 20px; margin: 0; flex: none; cursor: pointer; }
+  .pay__agree.is-bad { border-color: #E0524B; }
+
+  /* Способы оплаты. Логотипы карт не рисуются: их файлов у нас нет, а
+     нарисованные на глаз -- нарушение чужих правил. Знак СБП -- файл из
+     брендбука НСПК как есть, на белой подложке в обеих темах. */
+  .ways { margin-top: 1.1rem; }
+  .ways__head {
+    margin: 0 0 .5rem; font-size: .78rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .ways__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+  .way {
+    display: inline-flex; align-items: center; gap: .55rem; min-height: 46px;
+    padding: .3rem .85rem; background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 10px;
+    font-size: .9rem; font-weight: 600; color: var(--ink); line-height: 1.2;
+  }
+  .way small { display: block; font-weight: 400; font-size: .76rem; color: var(--muted); margin-top: .1rem; }
+  .way__icon { flex: none; color: var(--ink-2); }
+  .way--sbp { padding: .3rem; }
+  /* Охранное поле знака -- не меньше 2X, где X -- толщина штриха, около
+     12% высоты знака. При высоте 22 px это 5,3 px; здесь 6 и 8. */
+  .sbp-chip { display: inline-flex; flex: none; padding: 6px 8px; background: #FFFFFF; border-radius: 7px; }
+  .sbp-chip img { display: block; height: 22px; width: auto; max-width: none; }
+  .ways__hint { margin: .5rem 0 0; color: var(--muted); font-size: .85rem; }
+
+  .pay__msg { margin: 1rem 0 0; }
+  .pay__who {
+    margin-top: 1.2rem; padding: 1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--mark) 40%, var(--line)); border-radius: var(--radius);
+    background: color-mix(in srgb, var(--mark) 6%, transparent);
+  }
+  .pay__who-title { margin: 0 0 .3rem; font-weight: 600; color: var(--ink); }
+  .pay__small { margin: 0 0 .9rem; color: var(--ink-2); font-size: .92rem; }
+  .pay__two { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .pay__two .btn { flex: 1 1 10rem; }
+
+  .pay__go { margin-top: 1.2rem; min-height: 54px; }
+  .pay__go.is-busy[disabled] { opacity: .8; }
+  .spin {
+    display: none; flex: none; width: 1.05em; height: 1.05em; border-radius: 50%;
+    border: 2px solid currentColor; border-right-color: transparent;
+    animation: spin .8s linear infinite;
+  }
+  .is-busy .spin { display: inline-block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .pay__where { margin: .75rem 0 0; text-align: center; color: var(--muted); font-size: .85rem; }
+
+  /* Телефон: окно выезжает снизу на всю ширину и прокручивается внутри. */
+  @media (max-width: 560px) {
+    .pay { align-items: flex-end; padding: 0; }
+    .pay__box {
+      width: 100%; max-height: 94vh; max-height: 94dvh;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0; border-bottom: 0;
+      padding: 1.3rem 1rem calc(1.1rem + env(safe-area-inset-bottom));
+      animation-name: pay-up;
+    }
+    /* Код с тире длиннее прежнего: на телефоне поле во всю ширину, кнопка под ним. */
+    .pay__promo .promo .field { flex-basis: 100%; }
+    .pay__promo .promo .btn { flex: 1 1 100%; }
+  }
+  @keyframes pay-up { from { transform: translateY(40px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .pay__box { animation: none; }
+    .spin { animation-duration: 2s; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="blade" d="M 100 0 A 100 100 0 0 1 184.8 47.01 Q 114.28 74.24 100 0 Z"/>
+    <g id="aperture">
+      <use href="#blade" fill="#2A3550"/>
+      <use href="#blade" fill="#F26B1D" transform="rotate(60 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(120 100 100)"/>
+      <use href="#blade" fill="#2A3550" transform="rotate(180 100 100)"/>
+      <use href="#blade" fill="#20A0A8" transform="rotate(240 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(300 100 100)"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="/imagemodeler-static/">
+      <svg class="brand__mark" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+      <span class="brand__name">Image&nbsp;Modeler</span>
+    </a>
+    <nav class="topnav">
+      <a href="/imagemodeler-static/">О программе</a>
+      <a href="/imagemodeler-static/start.html">За 5 минут</a>
+      <a href="/imagemodeler-static/pricing.html">Цены</a>
+      <a href="/imagemodeler-static/support.html">Поддержка</a>
+      <a href="/imagemodeler-static/reviews.html">Отзывы</a>
+    </nav>
+    <a class="topbar__me" href="/imagemodeler-static/account.html">Скачать</a>
+    <button class="theme-btn" type="button" aria-label="Переключить тему">Тема</button>
+  </div>
+</header>
+
+<div class="wrap" style="margin-top:1rem">
+  <p class="data" style="padding:.7rem 1rem;border:1px solid var(--line, #3a4256);border-radius:10px">
+    Сайт временно работает в упрощённом режиме: кабинет и оплата на сайте не работают.
+    Программу можно <a href="/imagemodeler-static/account.html">скачать</a>, ключ выдаём по письму на
+    <a href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a> или боту в Телеграме: <a href="https://t.me/SupIM2026_Bot">@SupIM2026_Bot</a>.
+  </p>
+</div>
+
+
+<main class="page page--wide">
+  <p class="eyebrow">Сначала 3 дня бесплатно</p>
+  <h1 class="page__title">Цены на Image&nbsp;Modeler 2026</h1>
+  <p class="page__lede">
+    Программа полная, без урезанных возможностей. Сначала её можно
+    попробовать: после регистрации в кабинете сразу будет пробный ключ на 3 дня.
+    Карта для этого не нужна. Пробный ключ выдаётся один раз на аккаунт
+    и не продлевается. Чтобы работать дальше, нужен один из тарифов ниже.
+  </p>
+
+  <!-- Пробный ключ. До 21.10.2026 здесь стояла «Открытая бета» с ключом на
+       30 дней, который продлевался сам. Теперь новый аккаунт один раз
+       получает ключ на trial_days дней (config.json), и всё. -->
+  <div class="plans">
+
+    <div class="plan plan--now">
+      <span class="plan__tag">Для начала</span>
+      <span class="plan__name">Пробный ключ</span>
+      <div class="plan__price">
+        <span class="plan__num">0</span>
+        <span class="plan__cur">₽</span>
+        <span class="plan__per">3 дня бесплатно, один раз</span>
+      </div>
+      <p class="plan__note">
+        Всё, что программа умеет сегодня. Пробный ключ на 3 дня выдаётся сразу
+        после регистрации, один раз на аккаунт.
+      </p>
+      <ul class="included">
+        <li>Установщик для Windows 10 и 11</li>
+        <li>Точки на снимках, расчёт камер, размер, модель, текстура</li>
+        <li>Измерения: расстояние, угол, площадь</li>
+        <li>Экспорт в FBX, OBJ, STL и PLY — с настоящими размерами. В FBX вместе с камерами и точками</li>
+        <li>Чертёж в DXF и ровный снимок стены в масштабе (ортофото)</li>
+        <li>Без карты и без оплаты. Ключ не продлевается: дальше — тариф</li>
+      </ul>
+      <div class="plan__foot">
+        <a class="btn btn--primary btn--wide" href="/imagemodeler-static/subscribe.html">Получить пробный ключ</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ТАРИФЫ. Цены стоят в разметке, а не только приходят
+       скриптом: страницу читает проверка платёжного сервиса и поисковик, и
+       цена, которой нет без JavaScript, для них не существует. Скрипт внизу
+       сверяет их с сервером (/api/plans) -- цена в ссылке на оплату берётся
+       оттуда же, поэтому показанная и списанная сумма не разойдутся.
+       Кнопка тарифа открывает окно оплаты (оно в конце страницы): промокод,
+       согласие с офертой и переход в кассу -- там. -->
+  <h2 class="section__title" style="margin-top:3rem">Тарифы</h2>
+  <!-- Кто примет оплату и откуда придёт чек, скрипт уточняет по /api/plans:
+       чек за Робокассу присылает она сама, за ЮKassa ссылку на него кладёт
+       в кабинет продавец. Без скрипта остаются слова, верные для обеих. -->
+  <p class="page__lede" id="payNote">
+    Оплата картой, через СБП, T-Pay или SberPay на защищённой странице
+    <span id="payWhose">платёжного сервиса</span>. Данные карты сайт не получает.
+    Ключ появляется в кабинете сразу после оплаты.
+    <span id="payReceipt">Чек выписывается в «Мой налог».</span>
+    Как отказаться от покупки и вернуть деньги, написано на странице
+    <a href="/imagemodeler-static/terms.html">«Оплата и возврат»</a>.
+  </p>
+
+  <p class="msg" id="ownerNote" hidden style="margin:0 0 1.2rem">
+    Вы владелец, и цены ниже тестовые: по ним проверяется оплата каждого
+    тарифа. Покупатели видят обычные цены. Выключается в «Управлении».
+  </p>
+
+  <div class="msg msg--bad" id="payError" hidden style="margin:0 0 1.2rem"></div>
+
+  <div class="plans" id="paidPlans">
+
+    <div class="plan" data-plan="month">
+      <span class="plan__tag">Подписка</span>
+      <span class="plan__name">Месяц</span>
+      <div class="plan__price">
+        <span class="plan__num" data-price>290</span>
+        <span class="plan__cur">₽</span>
+        <span class="plan__per">за 30 дней</span>
+      </div>
+      <p class="plan__note">Попробовать на настоящей работе, без длинных обязательств.</p>
+      <ul class="included">
+        <li>Все возможности программы</li>
+        <li>Обновления, пока идёт срок</li>
+      </ul>
+      <div class="plan__foot">
+        <button class="btn btn--ghost btn--wide" type="button" data-buy aria-haspopup="dialog" disabled>Оплата скоро</button>
+      </div>
+    </div>
+
+    <div class="plan plan--now" data-plan="year">
+      <span class="plan__tag">Выгоднее</span>
+      <span class="plan__name">Год</span>
+      <div class="plan__price">
+        <span class="plan__num" data-price>2 900</span>
+        <span class="plan__cur">₽</span>
+        <span class="plan__per">за 365 дней</span>
+      </div>
+      <p class="plan__note">Два месяца из двенадцати — бесплатно.</p>
+      <ul class="included">
+        <li>Все возможности программы</li>
+        <li>Обновления в течение года</li>
+        <li>Ответы на вопросы по почте</li>
+      </ul>
+      <div class="plan__foot">
+        <button class="btn btn--primary btn--wide" type="button" data-buy aria-haspopup="dialog" disabled>Оплата скоро</button>
+      </div>
+    </div>
+
+    <div class="plan" data-plan="forever">
+      <span class="plan__tag">Разовая покупка</span>
+      <span class="plan__name">Навсегда</span>
+      <div class="plan__price">
+        <span class="plan__num" data-price>29 000</span>
+        <span class="plan__cur">₽</span>
+        <span class="plan__per">один раз</span>
+      </div>
+      <p class="plan__note">Ключ без срока. Платите один раз и больше о продлении не думаете.</p>
+      <ul class="included">
+        <li>Все возможности программы</li>
+        <li>Ключ не истекает</li>
+        <li>Ответы на вопросы по почте</li>
+      </ul>
+      <div class="plan__foot">
+        <button class="btn btn--ghost btn--wide" type="button" data-buy aria-haspopup="dialog" disabled>Оплата скоро</button>
+      </div>
+    </div>
+
+    <div class="plan" data-plan="company">
+      <span class="plan__tag">Организациям</span>
+      <span class="plan__name">Для компании</span>
+      <div class="plan__price">
+        <span class="plan__num" data-price>60 000</span>
+        <span class="plan__cur">₽</span>
+        <span class="plan__per">один раз</span>
+      </div>
+      <p class="plan__note">Версия для компаний, ключ без срока. Нужны счёт и акт — напишите в поддержку.</p>
+      <ul class="included">
+        <li>Версия программы для компаний</li>
+        <li>Ключ не истекает</li>
+        <li>Помощь с настройкой съёмки</li>
+      </ul>
+      <div class="plan__foot">
+        <button class="btn btn--ghost btn--wide" type="button" data-buy aria-haspopup="dialog" disabled>Оплата скоро</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:2.4rem">
+    <div class="card__head"><span class="card__title">Как это работает</span></div>
+    <ol class="steps">
+      <li><b>Регистрируетесь.</b> Нужны почта и пароль. Карта не спрашивается.</li>
+      <li><b>Получаете пробный ключ на 3 дня</b> — сразу в кабинете. Он начинается с
+          <span class="data">IM26-</span> и дальше идут группы по шесть знаков;
+          длинный, поэтому копируйте кнопкой, а не глазами.</li>
+      <li><b>Скачиваете установщик</b> по личной ссылке из кабинета.
+          Ссылка временная; кончится — обновляется одной кнопкой.</li>
+      <li><b>Ставите программу и вставляете ключ</b> при первом запуске.
+          Сначала программа, потом ключ — не наоборот.</li>
+      <li><b>Покупаете тариф</b>, когда пробные дни кончатся. Новый ключ
+          появится в том же кабинете сразу после оплаты; его вставляют
+          в программу вместо пробного.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card__head"><span class="card__title">Частые вопросы</span></div>
+    <div class="faq">
+      <div>
+        <p class="faq__q">Можно попробовать до покупки?</p>
+        <p class="faq__a">
+          Да. После регистрации в кабинете сразу появится пробный ключ на 3 дня.
+          Программа с ним полная, карта не нужна. Пробный ключ выдаётся один раз
+          на аккаунт. Трёх дней хватит, чтобы проверить программу на своих
+          снимках до оплаты.
+        </p>
+      </div>
+      <div>
+        <p class="faq__q">На какой срок выдаётся ключ?</p>
+        <p class="faq__a">
+          Пробный — на 3 дня, и он не продлевается. Когда срок выйдет, программа
+          попросит ключ; купить его можно здесь же, он появится в кабинете сразу
+          после оплаты. Скачанное и сохранённые проекты остаются у вас.
+          Оплаченный ключ действует столько, сколько написано в тарифе.
+          Ключ открытой беты, выданный раньше, работает до своей даты, но сам
+          больше не продлевается.
+        </p>
+      </div>
+      <div>
+        <p class="faq__q">Нужна ли видеокарта?</p>
+        <p class="faq__a">
+          Нет. Всё считает процессор, нейросетей внутри нет. Хватит обычного ноутбука.
+        </p>
+      </div>
+      <div>
+        <p class="faq__q">Почему Windows ругается на установщик?</p>
+        <p class="faq__a">
+          Сборка пока не подписана сертификатом.
+          SmartScreen покажет синее окно: «Подробнее» → «Выполнить в любом случае».
+          Контрольную сумму файла можно сверить в кабинете.
+        </p>
+      </div>
+      <div>
+        <p class="faq__q">Что вы обо мне храните?</p>
+        <p class="faq__a">
+          Почту и пароль, причём пароль в таком виде, из которого его не
+          восстановить. По почте вы входите в кабинет; писем на неё сайт не
+          шлёт. Данные карты вводятся на странице платёжного сервиса, к нам
+          они не попадают. Подробнее — на странице <a href="/imagemodeler-static/privacy.html">«Данные»</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <a class="backlink" href="/imagemodeler-static/">← Вернуться к описанию программы</a>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <svg width="18" height="18" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+    <span>Image Modeler 2026</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="/imagemodeler-static/start.html">За 5 минут</a>
+    <a class="data" href="/imagemodeler-static/reviews.html">Отзывы</a>
+    <a class="data" href="/imagemodeler-static/changelog.html">Что нового</a>
+    <a class="data" href="https://t.me/imagemodeler2026">Телеграм</a>
+    <a class="data" href="/imagemodeler-static/terms.html">Оплата и возврат</a>
+    <a class="data" href="/imagemodeler-static/offer.html">Оферта</a>
+    <a class="data" href="/imagemodeler-static/eula.html">Лицензия</a>
+    <a class="data" href="/imagemodeler-static/privacy.html">Данные</a>
+    <span class="data foot__ver">v0.1.9</span>
+  </div>
+  <div class="wrap foot__row">
+    <span class="data">Потехин Леонид Иванович, самозанятый · ИНН 752406177148</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a>
+  </div>
+</footer>
+
+<!-- Окно оплаты. Открывается кнопкой тарифа и показывает, что покупается и
+     за сколько, ещё до перехода в кассу. Сумму считает сервер (/api/price) той
+     же функцией, что и заказ, поэтому в окне и в кассе она одна. -->
+<div class="pay" id="pay" hidden>
+  <div class="pay__box" id="payBox" role="dialog" aria-modal="true"
+       aria-labelledby="payTitle" aria-describedby="payTerm" tabindex="-1">
+    <button class="pay__x" type="button" id="payX" aria-label="Закрыть окно оплаты">×</button>
+
+    <p class="eyebrow" id="payKind">Покупка</p>
+    <h2 class="pay__title" id="payTitle">Тариф</h2>
+    <p class="pay__term" id="payTerm"></p>
+    <span class="pay__test" id="payTest" hidden>тестовый режим: деньги не списываются</span>
+
+    <dl class="bill" id="payBill"></dl>
+    <div class="bill__total">
+      <span class="bill__total-k">К оплате</span>
+      <span class="bill__sum"><span id="paySum">0</span><small> ₽</small></span>
+    </div>
+
+    <details class="pay__promo" id="promoBox">
+      <summary>Есть промокод</summary>
+      <form class="promo" id="promoForm" novalidate>
+        <label class="field">
+          <span class="field__label">Промокод</span>
+          <input type="text" id="promo" class="codein" autocomplete="off" spellcheck="false"
+                 autocapitalize="characters" autocorrect="off" maxlength="64"
+                 placeholder="если есть">
+        </label>
+        <button class="btn btn--ghost" type="submit" id="promoGo">Применить</button>
+      </form>
+      <p class="msg" id="promoSay" role="status" hidden></p>
+    </details>
+
+    <label class="check pay__agree" id="payAgreeRow">
+      <input type="checkbox" id="payAgree">
+      <span>Я принимаю <a href="/imagemodeler-static/offer.html" target="_blank" rel="noopener">оферту</a>
+        и <a href="/imagemodeler-static/eula.html" target="_blank" rel="noopener">лицензионное соглашение</a></span>
+    </label>
+
+    <div class="ways">
+      <p class="ways__head" id="waysHead">Способы оплаты</p>
+      <ul class="ways__list" aria-labelledby="waysHead">
+        <li class="way">
+          <svg class="way__icon" width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><rect x="1" y="1" width="24" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 6h24" stroke="currentColor" stroke-width="2.5"/><path d="M5 12.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Банковская карта<small>Мир · Visa · Mastercard</small></span>
+        </li>
+        <!-- Подписи рядом нет: «сбп» написано в самом знаке, и второе «СБП»
+             справа читалось как заикание. -->
+        <li class="way way--sbp">
+          <span class="sbp-chip"><img src="/imagemodeler-static/assets/sbp.svg" width="41" height="22" alt="СБП — Система быстрых платежей"></span>
+        </li>
+        <li class="way">T-Pay</li>
+        <li class="way">SberPay</li>
+        <li class="way" id="wayYoo" hidden>ЮMoney</li>
+      </ul>
+      <p class="ways__hint">Способ выбирается на странице оплаты.</p>
+    </div>
+
+    <p class="msg msg--bad pay__msg" id="payMsg" role="alert" hidden></p>
+    <p class="msg pay__msg" id="payCalm" hidden>
+      Оплата ещё не подключена. Цены уже те, что будут, — загляните чуть позже.
+    </p>
+
+    <div class="pay__who" id="payWho" hidden>
+      <p class="pay__who-title">Войдите или зарегистрируйтесь, чтобы купить</p>
+      <p class="pay__small">
+        Покупка привязывается к аккаунту: ключ будет в кабинете, и открыть его
+        можно с любого компьютера. Регистрация займёт минуту, потом вы вернётесь сюда.
+      </p>
+      <div class="pay__two">
+        <a class="btn btn--primary" href="/imagemodeler-static/account.html?next=pricing" data-resume>Войти</a>
+        <a class="btn btn--ghost" href="/imagemodeler-static/subscribe.html?next=pricing" data-resume>Зарегистрироваться</a>
+      </div>
+    </div>
+
+    <button class="btn btn--primary btn--wide pay__go" type="button" id="payGo">
+      <span class="spin" aria-hidden="true"></span><span id="payGoText">Перейти к оплате</span>
+    </button>
+    <p class="pay__where" id="payWhere">Оплата на защищённой странице платёжного сервиса. Данные карты сайт не видит.</p>
+  </div>
+</div>
+
+<script src="theme.js"></script>
+<script>
+/* Тарифы и оплата. Цену считает сервер, и считает одной функцией для показа
+   (/api/price) и для заказа (/api/pay): показанная и списанная сумма не
+   расходятся. Кнопки включаются, только когда касса подключена. Кнопка
+   тарифа не уводит в кассу сразу, а открывает окно: что покупается, из чего
+   сумма, промокод, согласие, способы оплаты. */
+(function () {
+  var box = document.getElementById("paidPlans");
+  if (!box) return;
+  var el = function (id) { return document.getElementById(id); };
+  var note = el("payNote"), win = el("pay"), panel = el("payBox"), go = el("payGo");
+  var base = {}, quotes = {}, ready = false, test = false, cashier = "", signedIn = false;
+  var code = "", tried = "", promoTrouble = "", asked = 0, quoteSaid = "";
+  var current = "", opener = null, busy = false, downOnVeil = false;
+  /* Чья страница откроется: родительный падеж, «на странице Робокассы». */
+  var WHERE = { yookassa: "ЮKassa", robokassa: "Робокассы" };
+  /* Откуда придёт чек: за Робокассу его присылает она сама, за ЮKassa
+     продавец пробивает чек в «Мой налог» и кладёт ссылку в кабинет. */
+  var RECEIPT = {
+    yookassa: "Чек будет там же, рядом с заказом.",
+    robokassa: "Чек Робокасса пришлёт на почту, которую вы укажете при оплате."
+  };
+
+  function say(text) {
+    var error = el("payError");
+    error.textContent = text;
+    error.hidden = !text;
+  }
+
+  function rub(sum) {
+    return Number(sum).toLocaleString("ru-RU", { maximumFractionDigits: 2 });
+  }
+
+  function day(iso) {
+    var p = String(iso || "").split("-");
+    return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : "";
+  }
+
+  /* «Скидка 12,5% по 31.12.2026»: дробь через запятую, как принято у нас. */
+  function sale(plan) {
+    return "Скидка " + Number(plan.sale_percent).toLocaleString("ru-RU") + "%"
+      + (plan.sale_until ? " по " + day(plan.sale_until) : "");
+  }
+
+  function plural(n, one, few, many) {
+    var a = Math.abs(n) % 100, b = a % 10;
+    if (a > 10 && a < 20) return many;
+    if (b === 1) return one;
+    return b > 1 && b < 5 ? few : many;
+  }
+
+  /* Ответ сервера вместе с кодом: 503 у оплаты значит «касса не подключена».
+     Через полминуты без ответа запрос бросается, и кнопка снова доступна. */
+  function post(path, body) {
+    var stop = window.AbortController ? new AbortController() : null;
+    var timer = stop ? setTimeout(function () { stop.abort(); }, 30000) : 0;
+    return fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body || {}),
+      signal: stop ? stop.signal : undefined
+    }).then(function (r) {
+      return r.json().then(function (data) { clearTimeout(timer); data.status = r.status; return data; });
+    }, function (problem) { clearTimeout(timer); throw problem; });
+  }
+
+  /* ---------------- карточки тарифов ---------------- */
+
+  /* Строки под ценой: откуда взялась эта сумма. Собираются узлами, а не
+     разметкой: в них попадает промокод, который человек набрал сам. */
+  function deal(card, lines, bad) {
+    var where = card.querySelector("[data-deal]");
+    if (!where) {
+      where = document.createElement("div");
+      where.setAttribute("data-deal", "");
+      where.className = "plan__deal";
+      card.querySelector(".plan__price").insertAdjacentElement("afterend", where);
+    }
+    where.textContent = "";
+    lines.forEach(function (line) {
+      var row = document.createElement("span");
+      row.textContent = line;
+      where.appendChild(row);
+    });
+    where.classList.toggle("is-bad", !!bad);
+    where.hidden = !lines.length;
+  }
+
+  function was(card, full) {
+    var where = card.querySelector("[data-was]");
+    if (!where) {
+      where = document.createElement("span");
+      where.setAttribute("data-was", "");
+      where.className = "price__was";
+      card.querySelector(".plan__price").appendChild(where);
+    }
+    where.textContent = full ? rub(full) + " ₽" : "";
+    where.hidden = !full;
+  }
+
+  function paint() {
+    Object.keys(base).forEach(function (id) {
+      var card = box.querySelector('[data-plan="' + id + '"]');
+      if (!card) return;
+      var plan = base[id], quote = quoteOf(id);
+      var btn = card.querySelector("[data-buy]"), price = card.querySelector("[data-price]");
+
+      if (!quote.ok) {
+        price.textContent = rub(plan.price);
+        was(card, plan.full);
+        deal(card, [quote.error || "Этот тариф сейчас недоступен."], true);
+        btn.disabled = true;
+        btn.textContent = "Недоступно";
+        return;
+      }
+
+      var lines = [];
+      if (quote.owner_test) lines.push("Тестовая цена владельца");
+      else if (plan.sale_percent) lines.push(sale(plan));
+      if (quote.promo) lines.push("Промокод " + quote.promo + ": −" + rub(quote.discount) + " ₽");
+      if (quote.credit > 0) {
+        lines.push("Зачтено " + rub(quote.credit) + " ₽ за нынешний тариф. "
+                   + "Прежний ключ заменится новым.");
+      }
+      if (quote.extend_days > 0) {
+        lines.push("Оставшиеся " + quote.extend_days + " дн. прибавятся к новому сроку.");
+      }
+      price.textContent = rub(quote.sum);
+      was(card, quote.sum < quote.full && !quote.owner_test ? quote.full : 0);
+      deal(card, lines, false);
+
+      btn.disabled = !ready;
+      btn.textContent = !ready ? "Оплата скоро"
+        : quote.upgrade_from && quote.credit > 0 ? "Перейти с доплатой"
+        : quote.extend_days > 0 ? "Продлить" : "Купить";
+    });
+    if (current) render();
+  }
+
+  /* ---------------- окно оплаты ---------------- */
+
+  function quoteOf(id) {
+    var plan = base[id] || {};
+    return quotes[id] || { ok: true, sum: plan.price, price: plan.price, full: plan.full || plan.price,
+                           discount: 0, credit: 0, extend_days: 0, promo: "", owner_test: !!plan.owner_test };
+  }
+
+  /* «30 дней · для себя», «бессрочно · для компании». */
+  function term(plan) {
+    var n = Number(plan.days) || 0;
+    var edition = plan.edition === "studio" || plan.edition === "company" ? "для компании" : "для себя";
+    return (n ? n + " " + plural(n, "день", "дня", "дней") : "бессрочно") + " · " + edition;
+  }
+
+  function line(list, label, value, kind, hint) {
+    var row = document.createElement("div"), dt = document.createElement("dt"), dd = document.createElement("dd");
+    row.className = "bill__row" + (kind ? " is-" + kind : "");
+    dt.textContent = label;
+    if (hint) {
+      var small = document.createElement("small");
+      small.textContent = hint;
+      dt.appendChild(small);
+    }
+    dd.textContent = value;
+    row.appendChild(dt);
+    row.appendChild(dd);
+    list.appendChild(row);
+  }
+
+  /* Строки счёта: только те, что к этой покупке применились. */
+  function bill(plan, q) {
+    var list = el("payBill"), full = Number(q.full) || 0, price = Number(q.price) || 0;
+    var rows = [];
+    list.textContent = "";
+    if (!q.ok) return;
+    if (q.owner_test) {
+      line(list, "Цена для покупателей", rub(full) + " ₽");
+      line(list, "Тестовая цена владельца", rub(q.sum) + " ₽", "", "Покупатели её не видят.");
+      return;
+    }
+    if (price < full) {
+      rows.push([plan.sale_percent ? sale(plan) : "Скидка", "−" + rub(full - price) + " ₽", "minus"]);
+    }
+    if (q.promo) rows.push(["Промокод " + q.promo, "−" + rub(q.discount) + " ₽", "minus"]);
+    if (q.credit > 0) {
+      var from = base[q.upgrade_from] ? " «" + base[q.upgrade_from].title + "»" : "";
+      rows.push(["Зачёт за нынешний тариф" + from, "−" + rub(q.credit) + " ₽", "minus", "Прежний ключ заменится новым."]);
+    }
+    if (q.extend_days > 0) {
+      rows.push(["Оставшиеся дни нынешнего ключа", "+" + q.extend_days + " " + plural(q.extend_days, "день", "дня", "дней"),
+                 "plus", "Прибавятся к новому сроку."]);
+    }
+    if (Number(q.sum) > price - (Number(q.discount) || 0) - (Number(q.credit) || 0) + 0.005) {
+      rows.push(["Меньше 1 ₽ платёж не проходит", "", "", "Поэтому к оплате рубль."]);
+    }
+    if (rows.length) line(list, "Цена тарифа", rub(full) + " ₽");
+    rows.forEach(function (r) { line(list, r[0], r[1], r[2], r[3]); });
+  }
+
+  /* Что сказать про промокод в окне: про этот тариф, а не про все сразу. */
+  function promoSaid() {
+    var out = el("promoSay"), q = quotes[current] || {};
+    if (!tried) { out.hidden = true; return; }
+    out.hidden = false;
+    if (promoTrouble) {
+      out.className = "msg msg--bad";
+      out.textContent = promoTrouble;
+    } else if (q.promo) {
+      out.className = "msg msg--ok";
+      out.textContent = "Промокод " + q.promo + " применён: −" + rub(q.discount) + " ₽.";
+    } else {
+      out.className = "msg msg--bad";
+      out.textContent = q.promo_error || (code ? "К этому тарифу промокод не подходит." : "Этот промокод сейчас применить нельзя.");
+    }
+  }
+
+  function render() {
+    var plan = base[current];
+    if (!plan) return;
+    var q = quoteOf(current), sum = q.ok ? q.sum : plan.price;
+    var canPay = ready && signedIn && q.ok;
+
+    el("payKind").textContent = q.credit > 0 ? "Смена тарифа"
+      : q.extend_days > 0 && !q.upgrade_from ? "Продление" : "Покупка";
+    el("payTitle").textContent = plan.title || "";
+    el("payTerm").textContent = term(plan);
+    el("payTest").hidden = !test;
+    bill(plan, q);
+    el("paySum").textContent = rub(sum);
+
+    el("promoBox").hidden = !canPay || !!q.owner_test;
+    if (tried) el("promoBox").open = true;
+    promoSaid();
+    el("payAgreeRow").hidden = !canPay;
+    el("wayYoo").hidden = cashier !== "yookassa";
+
+    el("payCalm").hidden = ready;
+    el("payWho").hidden = signedIn || !ready;
+    go.hidden = !signedIn;
+    go.disabled = busy || !canPay;
+    el("payGoText").textContent = busy ? "Переходим к оплате…" : "Перейти к оплате · " + rub(sum) + " ₽";
+    el("payX").disabled = busy;
+    el("payWhere").hidden = !signedIn || !ready;
+    el("payWhere").textContent = "Оплата на защищённой странице " + (WHERE[cashier] || "платёжного сервиса") + ". Данные карты сайт не видит.";
+    /* Отказ по тарифу (например, уже есть бессрочный ключ) говорится, пока
+       он в силе. Стал тариф доступен после пересчёта -- отказ убирается. */
+    if (!q.ok) {
+      quoteSaid = q.error || "Этот тариф сейчас недоступен.";
+      sayPay(quoteSaid);
+    } else if (quoteSaid) {
+      if (el("payMsg").textContent === quoteSaid) sayPay("");
+      quoteSaid = "";
+    }
+  }
+
+  function sayPay(text) {
+    el("payMsg").textContent = text || "";
+    el("payMsg").hidden = !text;
+  }
+
+  function agreeBad(on) {
+    el("payAgreeRow").classList.toggle("is-bad", on);
+  }
+
+  function setBusy(on) {
+    busy = on;
+    go.classList.toggle("is-busy", on);
+    go.setAttribute("aria-busy", on ? "true" : "false");
+    render();
+  }
+
+  /* Пока окно открыто, страница под ним не прокручивается и не ловит фокус. */
+  function lock(on) {
+    var root = document.documentElement, gap = window.innerWidth - root.clientWidth;
+    root.classList.toggle("pay-lock", on);
+    document.body.style.paddingRight = on && gap > 0 ? gap + "px" : "";
+    [".topbar", "main", ".foot"].forEach(function (sel) {
+      var node = document.querySelector(sel);
+      if (node) node.inert = on;
+    });
+  }
+
+  function openPay(id, from) {
+    if (!base[id]) return;
+    current = id;
+    opener = from || null;
+    sayPay("");
+    agreeBad(false);
+    render();
+    win.hidden = false;
+    lock(true);
+    panel.scrollTop = 0;
+    panel.focus();
+    /* Пока окно открывается, сумма переспрашивается: человек мог войти в
+       соседней вкладке. С промокодом не переспрашиваем -- каждая проверка
+       кода на счету, а сумма с ним уже посчитана. */
+    if (!code) ask("").catch(function () {});
+  }
+
+  function closePay() {
+    if (busy || win.hidden) return;
+    win.hidden = true;
+    current = "";
+    lock(false);
+    if (opener && opener.focus) opener.focus();
+  }
+
+  /* Поле для кода (21.10.2026, попросил владелец). Буквы сами становятся
+     заглавными, тире само встаёт после каждых четырёх знаков: набирать его
+     не нужно, набранное не в счёт, как и пробелы с подчёркиваниями.
+     В кодах только латиница и цифры, всё прочее выпадает: русская С,
+     неотличимая от латинской C, не уходит на сервер под видом верного
+     кода. Набрана русская буква -- поле зовёт warn(true), и страница
+     подсказывает про раскладку; следом набрана латинская -- warn(false).
+     most -- сколько букв и цифр помещается в поле. pick -- каким бывает
+     код целиком: если во вставленном тексте есть такой кусок, а вокруг него
+     что-то ещё (весь файл с кодом восстановления), в поле попадает только
+     он. Тот же код стоит в личном кабинете и в кабинете владельца. */
+  function codeField(input, most, warn, pick) {
+    var was = input.value, whole = true, composing = false;
+    function bare(text) { return String(text).toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+    function shape(ev) {
+      var kind = ev && ev.inputType || "", value = input.value;
+      var at = input.selectionStart === null ? value.length : input.selectionStart;
+      var head = bare(value.slice(0, at)), tail = bare(value.slice(at));
+      /* Backspace или Delete без выделения стёр одно тире. Оно встало бы на
+         место, и курсор застрял бы у него: вместо тире стирается знак рядом,
+         с Ctrl -- соседняя группа. Выделенное и вырезанное тире просто
+         возвращается: стирать знак, которого человек не выделял, нельзя. */
+      if (whole && /^delete(Content|Word)(Backward|Forward)$/.test(kind) && value.length === was.length - 1 && head + tail === bare(was)) {
+        var step = /Word/.test(kind) ? 4 : 1;
+        if (/Forward$/.test(kind)) tail = tail.slice(step);
+        else head = head.slice(0, Math.max(0, head.length - step));
+      }
+      /* Сверх предела не печатается то, что набрано сейчас, -- как у maxlength. */
+      head = head.slice(0, Math.max(0, most - tail.length));
+      var all = (head + tail).slice(0, most), out = "";
+      for (var i = 0; i < all.length; i += 1) out += (i && i % 4 === 0 ? "-" : "") + all.charAt(i);
+      var n = head.length, to = n + Math.floor(Math.max(n - 1, 0) / 4);
+      if (input.value !== out) input.value = out;
+      if (document.activeElement === input && input.setSelectionRange) input.setSelectionRange(to, to);
+      was = out;
+      whole = true;
+      /* Вставка не в счёт: рядом с кодом в ней бывают русские слова. */
+      if (warn) warn(/[Ѐ-ӿ]/.test(value) && !/^insertFrom/.test(kind));
+    }
+    input.addEventListener("beforeinput", function () { was = input.value; whole = input.selectionStart === input.selectionEnd; });
+    input.addEventListener("focus", function () { was = input.value; composing = false; });
+    /* Пока идёт набор через IME или подсказки клавиатуры телефона, поле не
+       трогается: правка посреди набора сбивает клавиатуру. Тире встают,
+       когда набор закончен, после всех событий этого нажатия, -- если
+       к тому времени не начался следующий набор. */
+    input.addEventListener("compositionstart", function () { composing = true; });
+    input.addEventListener("compositionend", function () { composing = false; setTimeout(function () { if (!composing) shape(null); }, 0); });
+    input.addEventListener("input", function (ev) { if (!composing && !ev.isComposing) shape(ev); });
+    /* Уход из поля заканчивает любой набор. Если браузер не прислал конца
+       композиции, поле выравнивается здесь, а не остаётся строчными. */
+    input.addEventListener("blur", function () { composing = false; });
+    input.addEventListener("change", function () { composing = false; shape(null); });
+    if (pick) input.addEventListener("paste", function (ev) {
+      var text = ev.clipboardData ? ev.clipboardData.getData("text") : "", found = text.match(pick);
+      if (!found || bare(found[0]) === bare(text)) return;
+      ev.preventDefault();
+      input.value = found[0];
+      shape(null);
+    });
+    /* Что отправлять: только буквы и цифры, не больше most. Сервер тире не
+       считает, а длину кода проверяет вместе с ними, и длинный код с тире
+       он бы не принял. */
+    return function () { return bare(input.value).slice(0, most); };
+  }
+
+  /* Ответы приходят не обязательно по порядку: пересчёт при открытии окна
+     может вернуться позже проверки промокода и стереть скидку. Принимается
+     только ответ на последний запрос. */
+  function ask(promo) {
+    var mine = ++asked;
+    return post("/api/price", promo ? { promo: promo } : {}).then(function (data) {
+      if (mine !== asked) return;
+      if (!data.ok) {
+        if (promo) {
+          promoTrouble = data.error || "Не получилось проверить промокод.";
+          if (current) render();
+        }
+        return;
+      }
+      promoTrouble = "";
+      quotes = data.plans || {};
+      signedIn = !!data.signed_in;
+      var took = Object.keys(quotes).some(function (id) { return quotes[id].promo; });
+      code = promo && took ? promo : "";
+      paint();
+    });
+  }
+
+  /* После входа или регистрации человек возвращается сюда (?next=pricing),
+     и окно открывается на том же тарифе. Помнит вкладка, а не сервер. */
+  function remember() {
+    try { sessionStorage.setItem("im-buy", JSON.stringify({ plan: current, at: Date.now() })); } catch (e) {}
+  }
+
+  function resume() {
+    var saved = null;
+    try {
+      saved = JSON.parse(sessionStorage.getItem("im-buy") || "null");
+      sessionStorage.removeItem("im-buy");
+    } catch (e) { saved = null; }
+    if (!saved || !signedIn || !saved.plan || Date.now() - Number(saved.at || 0) > 3600000) return;
+    var card = Array.prototype.filter.call(box.querySelectorAll("[data-plan]"), function (one) {
+      return one.getAttribute("data-plan") === saved.plan;
+    })[0];
+    var btn = card && card.querySelector("[data-buy]");
+    if (btn && !btn.disabled) openPay(saved.plan, btn);
+  }
+
+  /* ---------------- события ---------------- */
+
+  box.addEventListener("click", function (ev) {
+    var btn = ev.target.closest && ev.target.closest("[data-buy]");
+    if (!btn || btn.disabled) return;
+    openPay(btn.closest("[data-plan]").getAttribute("data-plan"), btn);
+  });
+
+  el("payX").addEventListener("click", closePay);
+  win.addEventListener("pointerdown", function (ev) { downOnVeil = ev.target === win; });
+  win.addEventListener("click", function (ev) {
+    if (ev.target === win && downOnVeil) closePay();
+  });
+
+  /* Esc закрывает, Tab ходит по кругу внутри окна. */
+  document.addEventListener("keydown", function (ev) {
+    if (win.hidden) return;
+    if (ev.key === "Escape") { ev.preventDefault(); closePay(); return; }
+    if (ev.key !== "Tab") return;
+    var all = Array.prototype.filter.call(panel.querySelectorAll("a[href], button, input, summary"), function (one) {
+      return !one.disabled && one.tabIndex >= 0 && one.getClientRects().length > 0;
+    });
+    if (!all.length) return;
+    var first = all[0], last = all[all.length - 1], now = document.activeElement;
+    if (ev.shiftKey && (now === first || now === panel)) { ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && now === last) { ev.preventDefault(); first.focus(); }
+  });
+
+  /* Набрана русская буква: под полем подсказка про раскладку. Следом
+     набрана латинская -- строка снова говорит про сам промокод. */
+  var LAYOUT = "Промокод набирается латинскими буквами. Переключите раскладку.";
+  var promoCode = codeField(el("promo"), 32, function (on) {
+    var out = el("promoSay");
+    if (on) { out.hidden = false; out.className = "msg msg--bad"; out.textContent = LAYOUT; }
+    else if (out.textContent === LAYOUT) promoSaid();
+  });
+  el("promoForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var typed = promoCode(), btn = el("promoGo");
+    tried = typed;
+    btn.disabled = true;
+    ask(typed).then(function () {
+      btn.disabled = false;
+      if (current) render();
+    }, function () {
+      btn.disabled = false;
+      promoTrouble = "Сайт не ответил. Попробуйте ещё раз.";
+      if (current) render();
+    });
+  });
+
+  el("payAgree").addEventListener("change", function () {
+    if (el("payAgree").checked) { agreeBad(false); sayPay(""); }
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-resume]"), function (link) {
+    link.addEventListener("click", remember);
+  });
+
+  go.addEventListener("click", function () {
+    if (busy || !current) return;
+    var q = quoteOf(current);
+    if (!el("payAgree").checked) {
+      agreeBad(true);
+      sayPay("Отметьте согласие с офертой и лицензией — без него оплату не начать.");
+      el("payAgree").focus();
+      return;
+    }
+    sayPay("");
+    setBusy(true);
+    post("/api/pay", { plan: current, agree: true, promo: q.promo ? code : "" }).then(function (data) {
+      if (data.ok && data.url) {
+        location.href = data.url;
+        return;
+      }
+      if (data.need === "account") signedIn = false;
+      if (data.status === 503) ready = false;
+      setBusy(false);
+      paint();
+      /* Про неподключённую кассу и про вход окно уже говорит своими
+         строками; второй раз то же самое красным не нужно. */
+      if (data.status !== 503 && data.need !== "account") sayPay(data.error || "Не получилось начать оплату. Попробуйте ещё раз.");
+    }).catch(function () {
+      setBusy(false);
+      sayPay("Сайт не ответил. Проверьте связь и попробуйте ещё раз.");
+    });
+  });
+
+  /* Назад из кассы кнопкой браузера: страница может вернуться из памяти
+     вместе с крутящейся кнопкой. Оживляем её. */
+  window.addEventListener("pageshow", function (ev) {
+    if (ev.persisted && busy) setBusy(false);
+  });
+
+  if (/[?&]fail=1/.test(location.search)) {
+    say("Оплата не прошла, деньги не списаны. Можно попробовать ещё раз.");
+  }
+
+  fetch("/api/plans").then(function (r) { return r.json(); }).then(function (data) {
+    (data.plans || []).forEach(function (plan) { base[plan.id] = plan; });
+    ready = !!data.ready;
+    test = !!(data.ready && data.test);
+    cashier = String(data.cashier || "");
+    if (WHERE[cashier]) {
+      el("payWhose").textContent = WHERE[cashier];
+      el("payReceipt").textContent = RECEIPT[cashier];
+    }
+    if (test && note) {
+      note.appendChild(document.createTextNode(
+        " Сейчас касса в тестовом режиме: деньги не списываются."));
+    }
+    if (data.owner_prices) {
+      el("ownerNote").hidden = false;
+    }
+    paint();
+    return ask("");
+  }).then(resume).catch(function () {});
+})();
+</script>
+</body>
+</html>

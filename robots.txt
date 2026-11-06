@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /account.html
+Disallow: /gate.html
+
+Sitemap: https://leonid007what.github.io/imagemodeler-static/sitemap.xml

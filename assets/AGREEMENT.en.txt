@@ -1,0 +1,161 @@
+LICENCE AGREEMENT
+Image Modeler 2026
+Agreement version 1.0, [DATE]
+
+
+BEFORE YOU READ ON
+
+This agreement is written in plain language on purpose. If any of it is
+unclear, that is a fault in the writing, and it is worth telling us at the
+address at the end.
+
+By installing the program or starting to use it, you agree to what is below. If
+you do not agree, do not install it -- and if you have already paid, write to
+us and you will have your money back.
+
+
+1. WHO THE PARTIES ARE
+
+The rights holder: [YOUR NAME OR COMPANY, LEGAL STATUS, REGISTRATION] -- "we".
+You are whoever installed the program, regardless of who paid for it.
+
+
+2. WHAT YOU ARE BUYING
+
+You are buying the right to use the program, not the program itself. The rights
+in it stay with us.
+
+That right is non-exclusive, lasts as long as you like for the version you
+received, and lets you:
+
+  (a) install the program on any number of your own computers and use it on one
+      of them at a time;
+  (b) use whatever it produces -- models, measurements, exported files -- for
+      anything at all, including paid work, with nothing owed to us;
+  (c) keep backup copies of the installer.
+
+What the program works out is yours entirely. We claim nothing in your
+projects, your models or your photographs.
+
+
+3. WHAT YOU MAY NOT DO
+
+  (a) resell, rent or pass the program to anybody else -- except by
+      transferring your whole right to one person and ceasing to use it
+      yourself;
+  (b) reverse engineer, decompile or disassemble it, except where the law or
+      the licence of a third-party component expressly allows it (see 7);
+  (c) present the program as your own or remove notices of authorship;
+  (d) work around the licence key check.
+
+
+4. THE LICENCE KEY
+
+The key is issued in your name and is yours. Do not publish it: a key that has
+been shared is one we may revoke, and you would then need a new one.
+
+The key is checked on your own computer and needs no network connection.
+
+
+5. THE WARRANTIES THERE ARE NOT
+
+This is the most important clause in the agreement, and it is here because it
+is true rather than to hide behind.
+
+THE PROGRAM IS SUPPLIED AS IS. We do not promise that it is free of faults,
+that it suits your purpose, or that it works with any particular hardware.
+
+Separately and explicitly:
+
+  THIS PROGRAM TAKES MEASUREMENTS, AND HOW ACCURATE THOSE MEASUREMENTS ARE DOES
+  NOT DEPEND ON THE PROGRAM ALONE. It depends on how the photographs were
+  taken, how carefully the features were marked, whether the reference length
+  you gave it was right, and on much else that is entirely in your hands.
+
+  WE DO NOT WARRANT THE ACCURACY OF ANY RESULT AND ARE NOT RESPONSIBLE FOR
+  DECISIONS TAKEN ON THE STRENGTH OF ONE. Where a result is used somewhere a
+  mistake costs money, health or safety, verify it independently. The program
+  states its own estimate of the error; read it.
+
+This is not an evasion. It is what is written on every measuring instrument
+ever made: the instrument reads, and the person using it is answerable.
+
+
+6. HOW FAR WE ARE LIABLE
+
+Where we are liable at all, our total liability is limited to what you paid for
+the program.
+
+We are not liable for lost profit, lost time, lost data, or indirect loss of
+any kind.
+
+Nothing here limits our liability where the law does not allow it to be
+limited.
+
+
+7. OTHER PEOPLE'S WORK
+
+This program is built on the work of others. The full list is under
+**Help -> Licences** and in the `licenses` folder beside the program.
+
+The substantial one: the Qt and PySide6 libraries are used under the LGPL v3.
+Among other things that means you are entitled to replace them with your own
+build of the same versions. They are supplied as separate files in
+`_internal\PySide6`, so this is technically possible; the conditions are in the
+LGPL text shipped with the program.
+
+This agreement does not cover those components. Each has its own licence, and
+that licence prevails over this one.
+
+
+8. UPDATES
+
+Fixes and updates to the version you bought are free. Major new versions may be
+paid; if so, we will say so in advance.
+
+We are not obliged to release updates, nor to support the program forever.
+
+
+9. WHEN SOMETHING GOES WRONG
+
+Write to [SUPPORT ADDRESS]. Attach the log file -- **Help -> Show the Log**
+opens the folder it is in. Without it, diagnosis becomes guesswork.
+
+Refunds: within [PERIOD] days of purchase, no reason needed, if the program did
+not suit you. Write and you will have your money back.
+
+
+10. WHEN THIS AGREEMENT ENDS
+
+It lasts as long as you keep to it. If you break it, the right to use the
+program ends and you must remove it. Everything you made with it up to that
+point stays yours.
+
+
+11. THE REST
+
+Governing law: [JURISDICTION].
+
+If any clause turns out to be void, the rest continue to apply.
+
+We may change this agreement for future versions. For the version you already
+have, the agreement that applied when you bought it is the one that applies.
+
+
+─────────────────────────────────────────────────────────────────────────────
+
+TO FILL IN BEFORE THE FIRST SALE
+
+Everything in square brackets above:
+
+  [DATE]                        the date of this revision
+  [YOUR NAME OR COMPANY...]     who is selling: individual, sole trader, company
+  [SUPPORT ADDRESS]             an email or a page
+  [PERIOD]                      how many days for a refund (14 is usual)
+  [JURISDICTION]                e.g. "the law of the Russian Federation"
+
+And one thing that cannot be written into the text: this was not written by a
+lawyer. It covers what agreements like it usually cover and it is written
+honestly -- but before selling to people you do not know, show it to somebody
+who is answerable for that advice. It is cheap to do now and expensive to fix
+later.

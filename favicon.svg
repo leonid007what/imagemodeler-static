@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <path id="b" d="M 100 0 A 100 100 0 0 1 184.8 47.01 Q 114.28 74.24 100 0 Z"/>
+  </defs>
+  <use href="#b" fill="#2A3550"/>
+  <use href="#b" fill="#F26B1D" transform="rotate(60 100 100)"/>
+  <use href="#b" fill="#232838" transform="rotate(120 100 100)"/>
+  <use href="#b" fill="#2A3550" transform="rotate(180 100 100)"/>
+  <use href="#b" fill="#20A0A8" transform="rotate(240 100 100)"/>
+  <use href="#b" fill="#232838" transform="rotate(300 100 100)"/>
+</svg>

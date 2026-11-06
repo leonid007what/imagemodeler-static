@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лицензионное соглашение — Image Modeler 2026</title>
+<meta name="description" content="Лицензионное соглашение с пользователем программы Image Modeler 2026.">
+<meta property="og:title" content="Лицензионное соглашение — Image Modeler 2026">
+<meta property="og:description" content="Лицензионное соглашение с пользователем программы Image Modeler 2026.">
+<meta property="og:type" content="website">
+<!-- Три штуки, и все нужны. .ico браузер просит сам по адресу /favicon.ico,
+     даже когда в разметке указан svg — без него во вкладке был глобус.
+     svg остаётся: он чёткий на любом увеличении. png — для закладок на
+     телефоне, там svg не берут. -->
+<link rel="icon" href="/imagemodeler-static/favicon.ico" sizes="any">
+<link rel="icon" href="/imagemodeler-static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/imagemodeler-static/icon.png">
+<link rel="canonical" href="https://leonid007what.github.io/imagemodeler-static/eula.html">
+<meta property="og:url" content="https://leonid007what.github.io/imagemodeler-static/eula.html">
+<meta property="og:image" content="https://leonid007what.github.io/imagemodeler-static/assets/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Окно Image Modeler 2026: камеры и точки, найденные по фотографиям">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Image Modeler 2026">
+<meta property="og:locale" content="ru_RU">
+<link rel="stylesheet" href="site.css?v=2026-10-09">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="blade" d="M 100 0 A 100 100 0 0 1 184.8 47.01 Q 114.28 74.24 100 0 Z"/>
+    <g id="aperture">
+      <use href="#blade" fill="#2A3550"/>
+      <use href="#blade" fill="#F26B1D" transform="rotate(60 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(120 100 100)"/>
+      <use href="#blade" fill="#2A3550" transform="rotate(180 100 100)"/>
+      <use href="#blade" fill="#20A0A8" transform="rotate(240 100 100)"/>
+      <use href="#blade" fill="#232838" transform="rotate(300 100 100)"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="/imagemodeler-static/">
+      <svg class="brand__mark" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+      <span class="brand__name">Image&nbsp;Modeler</span>
+    </a>
+    <nav class="topnav">
+      <a href="/imagemodeler-static/">О программе</a>
+      <a href="/imagemodeler-static/start.html">За 5 минут</a>
+      <a href="/imagemodeler-static/pricing.html">Цены</a>
+      <a href="/imagemodeler-static/support.html">Поддержка</a>
+      <a href="/imagemodeler-static/reviews.html">Отзывы</a>
+    </nav>
+    <a class="topbar__me" href="/imagemodeler-static/account.html">Скачать</a>
+    <button class="theme-btn" type="button" aria-label="Переключить тему">Тема</button>
+  </div>
+</header>
+
+<div class="wrap" style="margin-top:1rem">
+  <p class="data" style="padding:.7rem 1rem;border:1px solid var(--line, #3a4256);border-radius:10px">
+    Сайт временно работает в упрощённом режиме: кабинет и оплата на сайте не работают.
+    Программу можно <a href="/imagemodeler-static/account.html">скачать</a>, ключ выдаём по письму на
+    <a href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a> или боту в Телеграме: <a href="https://t.me/SupIM2026_Bot">@SupIM2026_Bot</a>.
+  </p>
+</div>
+
+
+<main class="page page--wide">
+  <p class="eyebrow">Документ</p>
+  <h1 class="page__title">Лицензионное соглашение</h1>
+  <p class="page__lede">
+    Тот же текст, который программа показывает при установке. Написан простым языком нарочно.
+  </p>
+
+  <div style="display:flex;gap:.6rem;margin:1.6rem 0 1rem">
+    <button class="copy" type="button" id="ru" style="border-color:var(--mark);color:var(--ink)">Русский</button>
+    <button class="copy" type="button" id="en">English</button>
+  </div>
+
+  <pre class="eula" id="text">Загружаем…</pre>
+
+  <a class="backlink" href="/imagemodeler-static/subscribe.html">← К оформлению подписки</a>
+</main>
+
+<script src="theme.js"></script>
+<script>
+"use strict";
+(function () {
+  var box = document.getElementById("text");
+  var ru = document.getElementById("ru"), en = document.getElementById("en");
+
+  function show(lang) {
+    var on  = lang === "ru" ? ru : en;
+    var off = lang === "ru" ? en : ru;
+    on.style.borderColor = "var(--mark)"; on.style.color = "var(--ink)";
+    off.style.borderColor = "var(--line)"; off.style.color = "var(--ink-2)";
+    box.textContent = "Загружаем…";
+    fetch("assets/AGREEMENT." + lang + ".txt")
+      .then(function (r) { return r.text(); })
+      .then(function (t) { box.textContent = t; })
+      .catch(function () { box.textContent = "Текст соглашения не загрузился. Обновите страницу."; });
+  }
+
+  ru.addEventListener("click", function () { show("ru"); });
+  en.addEventListener("click", function () { show("en"); });
+  show("ru");
+})();
+</script>
+<footer class="foot">
+  <div class="wrap foot__row">
+    <svg width="18" height="18" viewBox="0 0 200 200" aria-hidden="true"><use href="#aperture"/></svg>
+    <span>Image Modeler 2026</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="/imagemodeler-static/start.html">За 5 минут</a>
+    <a class="data" href="/imagemodeler-static/reviews.html">Отзывы</a>
+    <a class="data" href="/imagemodeler-static/changelog.html">Что нового</a>
+    <a class="data" href="https://t.me/imagemodeler2026">Телеграм</a>
+    <a class="data" href="/imagemodeler-static/terms.html">Оплата и возврат</a>
+    <a class="data" href="/imagemodeler-static/offer.html">Оферта</a>
+    <a class="data" href="/imagemodeler-static/eula.html">Лицензия</a>
+    <a class="data" href="/imagemodeler-static/privacy.html">Данные</a>
+    <span class="data foot__ver">v0.1.9</span>
+  </div>
+  <div class="wrap foot__row">
+    <span class="data">Потехин Леонид Иванович, самозанятый · ИНН 752406177148</span>
+    <span class="foot__spacer"></span>
+    <a class="data" href="mailto:imagemodeler@mail.ru">imagemodeler@mail.ru</a>
+  </div>
+</footer>
+
+</body>
+</html>
